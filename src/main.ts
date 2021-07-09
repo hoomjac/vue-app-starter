@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { injectConfig } from './framework/injectConfig'
-import config from './shared/config'
+import config from './shared/config.json'
 import { registerGlobalComponent } from './utils/registerGlobalComp'
 import * as antIcons from '@ant-design/icons-vue'
 import 'core-js/stable'

@@ -4,6 +4,7 @@ const { name: pkgName, version } = require('./package.json')
 const GeneraterAssetPlugin = require('generate-asset-webpack-plugin')
 const path = require('path')
 const IS_PROD = process.env.NODE_ENV === 'production'
+const userConfig = require('./src/shared/config.json')
 
 module.exports = {
   publicPath: IS_PROD ? '././' : '/',
@@ -44,7 +45,8 @@ function createManifestJson(compilation) {
   return JSON.stringify({
     name: pkgName,
     version,
-    baseUrl: 'http://',
-    bundleTime: new Date().toLocaleString()
+    baseUrl: '',
+    bundleTime: new Date().toLocaleString(),
+    ...userConfig
   })
 }
